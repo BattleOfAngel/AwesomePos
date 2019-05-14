@@ -1,13 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+
+    <left-nav></left-nav>
+
+    <div class="main">
+
+      <router-view></router-view>
     </div>
-    <router-view/>
+
   </div>
 </template>
 
+<script>
+  import leftNav from '@/components/common/leftNav'
+  export default {
+      name:'app',
+      components:{
+          leftNav
+      }
+  }
+
+
+</script>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -15,17 +29,14 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-#nav {
-  padding: 30px;
+  height: 100%;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  .main{
+    float:left;
+    width:95%;
+    background-color: #EFF2F7;
+    height: 100%;
+    overflow: auto;
+  }
 </style>
